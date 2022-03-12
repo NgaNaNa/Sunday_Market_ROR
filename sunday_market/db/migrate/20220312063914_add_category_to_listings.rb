@@ -1,4 +1,4 @@
-class AddCategoryToListing < ActiveRecord::Migration[6.1]
+class AddCategoryToListings < ActiveRecord::Migration[6.1]
   def change
     add_reference :listings, :category, null: false, foreign_key: true
   end
