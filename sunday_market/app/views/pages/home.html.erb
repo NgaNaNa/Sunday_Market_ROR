@@ -1,0 +1,10 @@
+<% if current_user %>
+    Logged in as <%= current_user.email %>
+    <%= link_to "Sign Out", signout_path %>
+    <% else %>
+    <%= link_to "Sign In", signin_path %>
+    <%= link_to "Sign Up", signup_path %>
+    <% end %>
+
+<h1>Pages#home</h1>
+<%= link_to "Listings", listings_path %>
