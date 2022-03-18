@@ -21,19 +21,19 @@ class ListingsController < ApplicationController
         render json: found_listing
     end
 
-    def create
-        @listings << {
-            id: params[:id]
-            title: params[:title]
-            description: params[:description]
-            price: params[:price]
-            sold: params[:sold]
-            condition: params[:condition]
-            # category: params[:category]
-        }
-        write_listings(@listings)
-        redirect_to listings_path
-    end
+    # def create
+    #     @listings << {
+    #         id: params[:id]
+    #         title: params[:title]
+    #         description: params[:description]
+    #         price: params[:price]
+    #         sold: params[:sold]
+    #         condition: params[:condition]
+    #         # category: params[:category]
+    #     }
+    #     write_listings(@listings)
+    #     redirect_to listings_path
+    # end
 
     # def destroy
 
