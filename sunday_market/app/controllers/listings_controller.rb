@@ -1,4 +1,6 @@
 class ListingsController < ApplicationController
+    before_action :read_listings
+    skip_before_action :verify_authenticity_token
     
     def index
         render plain: "You are on the listings page"
@@ -19,9 +21,19 @@ class ListingsController < ApplicationController
         render json: found_listing
     end
 
-    # def create
-
-    # end
+    def create
+        @listings << {
+            id: params[:id]
+            title: params[:title]
+            description: params[:description]
+            price: params[:price]
+            sold: params[:sold]
+            condition: params[:condition]
+            # category: params[:category]
+        }
+        write_listings(@listings)
+        redirect_to listings_path
+    end
 
     # def destroy
 
