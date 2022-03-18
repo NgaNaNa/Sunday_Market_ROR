@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   devise_scope :user do
     get '/sign_in', to: 'devise/sessions#new', as: 'signin'
     post '/sign_in', to: 'devise/sessions#create', as: 'create_session'
+    get '/sign_out', to: 'devise/sessions#destroy', as: 'signout'
   end
   # destroy_user_session DELETE /users/sign_out                   {controller:"devise/sessions", action:"destroy"}
   # get '/sign_in', to: 'sessions#new', as: 'signin'
