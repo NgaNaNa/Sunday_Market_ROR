@@ -1,14 +1,34 @@
 class ListingsController < ApplicationController
-    before_action :read_listings
+    before_action :set_listing, only: [:show, :edit, :update, :destroy]
     skip_before_action :verify_authenticity_token
     
     def index
         @listings = Listing.all
     end
 
-    def new 
+    # get /movies/1
+    def show
+    end
+
+    # get /listings/new
+    def new
         @listing = Listing.new
     end 
+
+    def create
+        @listing = Listing.create(listing_params)
+        redirect_to listings_path
+    end
+
+    # get /listings/1/edit
+    def edit
+    end
+
+    def update
+    end
+    # DELETE /movies/1
+    def destroy
+    end
 
     # def create
     #     @listing = current_user.listings.new(listing_params)
@@ -32,14 +52,18 @@ class ListingsController < ApplicationController
     # end
 
     private
-
-    def read_listings
-        listings = Listing.all
+    
+    def set_listing
+        @listing = Listing.find(params[:id])
     end
 
-    # def listing_params
-    #   params.require(:listing).permit(:title, :description, :price, :sold, :condition, :category_id)
+    # def read_listings
+    #     listings = Listing.all
     # end
+
+    def listing_params
+      params.require(:listing).permit(:title, :description, :price, :condition, :category_id)
+    end
 
     # def set_form_vars
     #     @categories = Category.all
