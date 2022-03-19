@@ -3,46 +3,47 @@ class ListingsController < ApplicationController
     skip_before_action :verify_authenticity_token
     
     def index
-        render plain: "You are on the listings page"
-        # <%= link_to "Home Page", root %>
-        listings = read_listings
-        p listings
-        render json: listings
+        @listings = Listing.all
     end
 
-    def show
-        # show is for sending back only 1 resource
-        render plain: "This is the show method, sending back only 1 resource"
-
-        found_listing = listings.find do |listing|
-            listing[:id] == params[:id]
-        end
-
-        render json: found_listing
-    end
+    def new 
+        @listing = Listing.new
+    end 
 
     # def create
-    #     @listings << {
-    #         id: params[:id]
-    #         title: params[:title]
-    #         description: params[:description]
-    #         price: params[:price]
-    #         sold: params[:sold]
-    #         condition: params[:condition]
-    #         # category: params[:category]
-    #     }
-    #     write_listings(@listings)
-    #     redirect_to listings_path
+    #     @listing = current_user.listings.new(listing_params)
+    #         if @listing.save 
+    #             redirect_to @listing, notice: "Listing successfully created"
+    #         else
+    #             set_form_vars
+    #             render "new", notice: "Sorry, Something went wrong. Make sure your form is completely filled in before submitting"
+    #         end
     # end
 
-    # def destroy
+    # def show
+    #     # show is for sending back only 1 resource
+    #     render plain: "This is the show method, sending back only 1 resource"
 
+    #     found_listing = listings.find do |listing|
+    #         listing[:id] == params[:id]
+    #     end
+
+    #     # add in print found_listing
     # end
+
+    private
 
     def read_listings
-        # JSON.parse(File.read(Rails.public_path.join("listings.json")))
         listings = Listing.all
-        
     end
+
+    # def listing_params
+    #   params.require(:listing).permit(:title, :description, :price, :sold, :condition, :category_id)
+    # end
+
+    # def set_form_vars
+    #     @categories = Category.all
+    #     @conditions = Listing.conditions.keys
+    # end
 
 end

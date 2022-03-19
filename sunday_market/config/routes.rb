@@ -19,9 +19,16 @@ Rails.application.routes.draw do
   # get '/users', to: 'users#create'
   # get '/users/new', to: 'users#new'
   # get '/users/:id/edit', to: 'users#edit'
-  # get '/users/:id', to: 'users#show'
+  get '/users/:id', to: 'users#show'
   # put '/users/:id', to: 'users#update'
   # get '/users/:id', to: 'users#destroy'
+  get '/listings', to: 'listings#index'
+  get '/listings', to: 'listings#create'
+  get '/listings/new', to: 'listings#new'
+  get '/listings/:id/edit', to: 'listings#edit'
+  get '/listings/:id', to: 'listings#show'
+  put '/listings/:id', to: 'users#update'
+  get '/listings/:id', to: 'users#destroy'
 
  end
 
