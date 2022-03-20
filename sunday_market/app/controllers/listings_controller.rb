@@ -1,6 +1,7 @@
 class ListingsController < ApplicationController
     before_action :set_listing, only: [:show, :edit, :update, :destroy]
     skip_before_action :verify_authenticity_token
+    before_action :set_conditions, only: [:new, :edit]
     
     def index
         @listings = Listing.all
@@ -13,11 +14,11 @@ class ListingsController < ApplicationController
     # get /listings/new
     def new
         @listing = Listing.new
-        @conditions = Listing.conditions.keys
+        # @conditions = Listing.conditions.keys
     end 
 
     def create
-        @listing = Listing.create(listing_params)
+        @listing = Listing.create!(listing_params)
         redirect_to listings_path
     end
 
@@ -55,7 +56,8 @@ class ListingsController < ApplicationController
     private
     
     def set_listing
-        @listing = Listing.find(params[:id])
+        id = params[:id]
+        @listing = Listing.find(id)
     end
 
     # def read_listings
@@ -63,9 +65,12 @@ class ListingsController < ApplicationController
     # end
 
     def listing_params
-        params.require(:listing).permit(:title, :description, :price, :condition, :category_id)
+        params.require(:listing).permit(:user_id, :title, :description, :price, :condition, :category_id)
     end
 
+    def set_conditions
+        @conditions = Listing.conditions.keys
+    end
     # def set_form_vars
     #     @categories = Category.all
     #     @conditions = Listing.conditions.keys

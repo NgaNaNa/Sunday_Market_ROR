@@ -10,7 +10,7 @@ class Listing < ApplicationRecord
         poor:3
     }
 
-    validates :title, :description, :price, :sold, :condition, :category, presence: true 
+    validates :title, :description, :price, :condition, :category, presence: true 
     validates :title, length: {maximum: 100}
 
     private

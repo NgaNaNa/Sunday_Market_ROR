@@ -1,0 +1,35 @@
+<%= form_with model: listing do |f| %>
+    <%# <div class="field">
+        <%= f.label :picture %>
+        <%#= f.file_field :picture, accept: "image/png, image/jpg, image/jpeg" %>
+    <%# </div> %>
+    <div>
+    
+        <%= f.hidden_field :user_id, value: current_user.id %>
+        <%= f.hidden_field :sold, value: false %>
+        <br>
+        <%= f.label :title %>
+        <%= f.text_field :title %>
+        <br>
+        <%= f.label :description %>
+        <%= f.text_area :description %>
+        <br>
+        <p>Select the condition of your listing:</p>
+        <% for option in @conditions %>
+            <div>
+                <%= f.radio_button :condition, option %>
+                <%= f.label "condition#{option}".to_sym, option %>
+            </div>
+        <% end %>
+        <br>
+        <%= f.label :category_id %>
+        <%= f.number_field :category_id %>
+        <br>
+        <%= f.label :price %>
+        <%= f.number_field :price, min: 0, max: 10000 %>
+        <br>
+        <%= f.submit "Submit Form" %>
+    </div>
+
+<% end %>
+
