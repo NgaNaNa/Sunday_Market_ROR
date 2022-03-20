@@ -4,7 +4,6 @@
         <%#= f.file_field :picture, accept: "image/png, image/jpg, image/jpeg" %>
     <%# </div> %>
     <div>
-    
         <%= f.hidden_field :user_id, value: current_user.id %>
         <%= f.hidden_field :sold, value: false %>
         <br>
@@ -22,8 +21,8 @@
             </div>
         <% end %>
         <br>
-        <%= f.label :category_id %>
-        <%= f.number_field :category_id %>
+            <%= f.label "Select the category of your listing:" %>
+            <%= f.collection_select :category_id, Category.order(:name),:id,:name %>
         <br>
         <%= f.label :price %>
         <%= f.number_field :price, min: 0, max: 10000 %>
