@@ -7,22 +7,27 @@
     <%# </div> %>
     <div>
         <%= f.hidden_field :user_id, value: current_user.id %>
-
+        <br>
         <%= f.label :title %>
         <%= f.text_field :title %>
-
+        <br>
         <%= f.label :description %>
-        <%= f.text_field :description %>
-
-        <%= f.label :condition %>
-        <%= f.text_field :condition %>
-
+        <%= f.text_area :description %>
+        <br>
+        <p>Select the condition of your listing:</p>
+        <% for option in @conditions %>
+            <div>
+                <%= f.radio_button :sex, option %>
+                <%= f.label "condition#{option}".to_sym, option %>
+            </div>
+        <% end %>
+        <br>
         <%= f.label :category_id %>
         <%= f.number_field :category_id %>
-
+        <br>
         <%= f.label :price %>
-        <%= f.number_field :price %>
-
+        <%= f.number_field :price, min: 0, max: 10000 %>
+        <br>
         <%= f.submit "Submit Form" %>
     </div>
 

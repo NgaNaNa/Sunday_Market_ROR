@@ -13,6 +13,7 @@ class ListingsController < ApplicationController
     # get /listings/new
     def new
         @listing = Listing.new
+        @conditions = Listing.conditions.keys
     end 
 
     def create
@@ -62,7 +63,7 @@ class ListingsController < ApplicationController
     # end
 
     def listing_params
-      params.require(:listing).permit(:title, :description, :price, :condition, :category_id)
+        params.require(:listing).permit(:title, :description, :price, :condition, :category_id)
     end
 
     # def set_form_vars
