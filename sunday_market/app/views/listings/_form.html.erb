@@ -14,7 +14,7 @@
         <%= f.text_area :description %>
         <br>
         <p>Select the condition of your listing:</p>
-        <% for option in @conditions %>
+        <% for option in conditions %>
             <div>
                 <%= f.radio_button :condition, option %>
                 <%= f.label "condition#{option}".to_sym, option %>

@@ -2,6 +2,7 @@ class ListingsController < ApplicationController
     before_action :set_listing, only: [:show, :edit, :update, :destroy]
     skip_before_action :verify_authenticity_token
     before_action :set_conditions, only: [:new, :edit]
+
     
     def index
         @listings = Listing.all
@@ -24,10 +25,19 @@ class ListingsController < ApplicationController
 
     # get /listings/1/edit
     def edit
+
     end
 
-    def update
+    def update 
+        @listing.update(listing_params)
+        if @listing.save 
+            redirect_to @listing, notice: "Listing successfully updated"
+        else
+            set_form_vars
+            render "edit", notice: "Something went wrong"
+        end 
     end
+
     # DELETE /movies/1
     def destroy
     end
@@ -56,8 +66,7 @@ class ListingsController < ApplicationController
     private
     
     def set_listing
-        id = params[:id]
-        @listing = Listing.find(id)
+        @listing = Listing.find(params[:id])
     end
 
     # def read_listings
@@ -65,7 +74,7 @@ class ListingsController < ApplicationController
     # end
 
     def listing_params
-        params.require(:listing).permit(:user_id, :title, :description, :price, :condition, :category_id)
+        params.require(:listing).permit(:user_id, :title, :description, :price, :condition, :category_id, :sold)
     end
 
     def set_conditions
@@ -75,9 +84,10 @@ class ListingsController < ApplicationController
     def set_categories
         @categories = Category.names
     end
-    # def set_form_vars
-    #     @categories = Category.all
-    #     @conditions = Listing.conditions.keys
-    # end
+
+    def set_form_vars
+        @categories = Category.all
+        @conditions = Listing.conditions.keys
+    end
 
 end

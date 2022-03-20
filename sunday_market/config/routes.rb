@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
 
   devise_for :users
-  root to: 'pages#home'
+  get "/", to: "pages#home", as: "root"
+  # root to: 'pages#home'
   get '/sign_up', to: 'users#new', as: 'signup'
   # Session routes for Authenticatable (default)
   devise_scope :user do
@@ -26,10 +27,11 @@ Rails.application.routes.draw do
   post '/listings', to: 'listings#create'
   get '/listings/new', to: 'listings#new', as: 'new_listing'
   # post '/listings', to: 'listings#index'
-  get '/listings/:id/edit', to: 'listings#edit'
   get '/listings/:id', to: 'listings#show', as: 'listing'
-  put '/listings/:id', to: 'users#update'
-  delete '/listings/:id', to: 'users#destroy'
+  put '/listings/:id', to: 'listings#update'
+  patch '/listings/:id', to: 'listings#update'
+  delete '/listings/:id', to: 'listings#destroy'
+  get '/listings/:id/edit', to: 'listings#edit', as: 'edit_listing'
 
  end
 

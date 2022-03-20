@@ -1,3 +1,5 @@
 <h1> Make changes to your listing </h1>
+<%# <%= form_with model: Listing.find(params[:id]) do |f| %>
 
-<%= render "form", listing: @listing, conditions: @conditions %>
+<%= render "form", listing: @listing, conditions: @conditions, categories: @categories %>
+<%=link_to "Home", root_path%>
