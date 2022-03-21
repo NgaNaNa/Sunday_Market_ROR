@@ -34,6 +34,7 @@ Rails.application.configure do
   config.action_controller.allow_forgery_protection = false
 
   # Store uploaded files on the local file system in a temporary directory.
+  # Keep this as test as you don't want to flood AWS s3 with test files
   config.active_storage.service = :test
 
   config.action_mailer.perform_caching = false

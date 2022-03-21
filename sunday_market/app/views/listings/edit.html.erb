@@ -1,8 +1,8 @@
 <h1> Make changes to your listing </h1>
-<%# <%= form_with model: Listing.find(params[:id]) do |f| %>
-
+<%# Render form allows the same form to be used for two different purposes: Create new listing and Editing listing %>
 <%= render "form", listing: @listing, conditions: @conditions, categories: @categories %>
 <br>
+<%# This delete button offers users second chance to ensure the delete action is intentional and not a mistake %>
 <%= link_to "Delete Listing", @listing, method: :delete, data: {confirm: "Are you sure?"}, class:"btn btn-danger" %>
 
 <%=link_to "Home", root_path%>

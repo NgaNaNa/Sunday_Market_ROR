@@ -1,3 +1,5 @@
+<%# Navbar styling by Bootstrap %>
+<%# Navbar created as partials to help ease in displaying on all pages for conistency %>
 <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
   <a class="navbar-brand" href="/">Sunday Market</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -5,9 +7,16 @@
   </button>
   <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
     <div class="navbar-nav">
-      <a class="nav-item nav-link" href="#">Features</a>
-      <a class="nav-item nav-link" href="#">Pricing</a>
+    <%# This logic allow users to only see what they are allowed, depending on if they are signed in. This will determined what they are authorised to see and authorised to execute certain functions %>
+      <% if current_user %>
+        Logged in as <%= current_user.email %>
+        <%= link_to "Sign Out", signout_path, class: "nav-item nav-link" %>
+        <%= link_to "Create Listing", new_listing_path, class: "nav-item nav-link" %>
+      <% else %>
+        <%= link_to "Sign In", signin_path, class: "nav-item nav-link" %>
+        <%= link_to "Sign up", '/users/sign_up', class: "nav-item nav-link" %>
+      <% end %>
+      <%= link_to "View Listings", listings_path, class: "nav-item nav-link" %>
     </div>
   </div>
 </nav>
-

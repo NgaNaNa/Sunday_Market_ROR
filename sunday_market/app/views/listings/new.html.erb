@@ -1,3 +1,4 @@
 <h1> Create A New Listing to Sell </h1>
-<%# <%= "user: " + current_user.id.to_s %>
+<%# Render form allows the same form to be used for two different purposes: Create new listing and Editing listing %>
+<%# Keeping code DRY and effiency in updating the format of forms in this application and reduces the chances of human error%>
 <%= render "form", listing: @listing, conditions: @conditions, categories: @categories %>

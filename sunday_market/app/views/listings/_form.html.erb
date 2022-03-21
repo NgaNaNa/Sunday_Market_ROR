@@ -1,9 +1,9 @@
+<%# form_with is a partial and helps build a form with many functions %>
+<%# This form takes in the model listings %>
 <%= form_with model: listing do |f| %>
-    <%# <div class="field">
-        <%= f.label :picture %>
-        <%#= f.file_field :picture, accept: "image/png, image/jpg, image/jpeg" %>
-    <%# </div> %>
+
     <div>
+    <%# Hidden fields to help capture these details in the bak-end but not to be displayed in front-end %>
         <%= f.hidden_field :user_id, value: current_user.id %>
         <%= f.hidden_field :sold, value: false %>
         <br>
@@ -15,18 +15,22 @@
         <br>
         <p>Select the condition of your listing:</p>
         <% for option in conditions %>
+        <%# Radio buttons provided for conditions to help with providing buyer in the search function (To be implemented in future) %>
             <div>
                 <%= f.radio_button :condition, option %>
                 <%= f.label "condition#{option}".to_sym, option %>
             </div>
         <% end %>
+        <%# Category has a drop down function to stop users from typing in anything and helps future search functions %>
         <br>
             <%= f.label "Select the category of your listing:" %>
             <%= f.collection_select :category_id, Category.order(:name),:id,:name %>
         <br>
         <%= f.label :price %>
+        <%# There is a min and max amount on the uers listing %>
         <%= f.number_field :price, min: 0, max: 10000 %>
         <br>
+        <%# File upload is restricted to png, jpg, jpeg files only %>
         <%= f.file_field :image, accept: "image/png, image/jpg, image/jpeg" %>
         <br>
         <%= f.submit "Save Listing" %>
