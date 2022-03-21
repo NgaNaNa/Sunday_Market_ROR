@@ -3,7 +3,7 @@
 <%= form_with model: listing do |f| %>
 
     <div>
-    <%# Hidden fields to help capture these details in the bak-end but not to be displayed in front-end %>
+    <%# Hidden fields to help capture these details in the back-end but not to be displayed in front-end %>
         <%= f.hidden_field :user_id, value: current_user.id %>
         <%= f.hidden_field :sold, value: false %>
         <br>

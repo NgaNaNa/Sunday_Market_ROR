@@ -2,7 +2,7 @@ class ListingsController < ApplicationController
     before_action :set_listing, only: [:show, :edit, :update, :destroy]
     skip_before_action :verify_authenticity_token
     before_action :set_conditions, only: [:new, :edit]
-
+    before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy] #-> user has to "login" to access app
     
     def index
         @listings = Listing.all
