@@ -3,6 +3,6 @@
 
 <%= render "form", listing: @listing, conditions: @conditions, categories: @categories %>
 <br>
-<%= link_to "DELETE", delete_listing_path(listing.id), class:"btn btn-danger" %>
+<%= link_to "Delete Listing", @listing, method: :delete, data: {confirm: "Are you sure?"}, class:"btn btn-danger" %>
 
 <%=link_to "Home", root_path%>

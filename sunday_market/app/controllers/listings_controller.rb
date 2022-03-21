@@ -51,6 +51,8 @@ class ListingsController < ApplicationController
 
     # DELETE /movies/1
     def destroy
+        @listing.destroy
+        redirect_to listings_path, notice: "Listing successfully deleted"
     end
 
 
