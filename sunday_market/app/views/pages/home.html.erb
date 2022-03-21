@@ -1,28 +1,27 @@
-<div class="row">
-
-  <div class="jumbotron">
-    <div class="col-md-6">
-      <h1 class="display-4">Hello, world!</h1>
-      <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
-      <hr class="my-4">
-      <p class="lead">
-        <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
-      </p>
-    </div>
-    <div class="col-md-6">
-      <%= image_tag "ceramic" %>
-    </div> 
-  </div>
-</div>
-
-
 <% if current_user %>
     Logged in as <%= current_user.email %>
     <%= link_to "Sign Out", signout_path %>
     <% else %>
     <%= link_to "Sign In", signin_path %>
-    <%= link_to "Sign Up", signup_path %>
-    <% end %>
+<% end %>
+<%= link_to "Sign up", '/users/sign_up' %>
+
+<div class="jumbotron">
+  <div class="row">
+    <div class="col-md-6">
+      <h1 class="display-4">Sunday Market</h1>
+      <p class="lead"> blurb </p>
+      <hr class="my-4">
+      <p class="lead">
+        <a class="btn btn-primary btn-lg" href="#" role="button">Creating A listing</a>
+      </p>
+    </div>
+
+    <div class="col-md-6">
+      <%= image_tag "ceramic.jpg", class: "home-image" %>
+    </div> 
+  </div>
+</div>
 
 <h1>Pages#home</h1>
 <%= link_to "Listings", listings_path %>

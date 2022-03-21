@@ -10,7 +10,7 @@
                 <% end %>
             </div>
             <div class="listings-body">
-                <h3><%= link_to listing.title,  listing_path(listing.id) %></h3>
+                <h3><%= link_to listing.title, listing_path(listing.id) %></h3>
                 <p><%= listing.description %></p>
                 <h4><%= number_to_currency(listing.price) %></h4>
             </div>

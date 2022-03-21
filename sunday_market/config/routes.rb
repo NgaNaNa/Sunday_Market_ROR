@@ -2,10 +2,11 @@ Rails.application.routes.draw do
 
   devise_for :users
   get "/", to: "pages#home", as: "root"
-  # root to: 'pages#home'
   get '/sign_up', to: 'users#new', as: 'signup'
+  # root to: 'pages#home'
   # Session routes for Authenticatable (default)
   devise_scope :user do
+    # get '/sign_up', to: 'devise/sessions#new', as: 'signup'
     get '/sign_in', to: 'devise/sessions#new', as: 'signin'
     post '/sign_in', to: 'devise/sessions#create', as: 'create_session'
     get '/sign_out', to: 'devise/sessions#destroy', as: 'signout'
