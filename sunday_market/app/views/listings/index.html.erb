@@ -1,18 +1,22 @@
-<h1>Sunday Market Listings</h1>
+<h1>All Listings</h1>
+
 <section>
     <div>
         <% @listings.each do |listing| %>
-            <div class="listings-image">
-                <% if listing.image.attached? %>
-                    <%= image_tag listing.image, alt: listing.title %>
-                <% else %>
-                    <%= link_to image_tag("listing_default.jpeg", alt: "Sunday Market Listing"), listing_path(listing.id) %>
-                <% end %>
-            </div>
-            <div class="listings-body">
-                <h3><%= link_to listing.title, listing_path(listing.id) %></h3>
-                <p><%= listing.description %></p>
-                <h4><%= number_to_currency(listing.price) %></h4>
+            <div class="card" style="width: 18rem;">
+                <div class="listings-image">
+                    <% if listing.image.attached? %>
+                        <%= image_tag listing.image, alt: listing.title %>
+                    <% else %>
+                        <%= link_to image_tag("listing_default.jpeg", alt: "Sunday Market Listing"), listing_path(listing.id) %>
+                    <% end %>
+                </div>
+                <div class="listings-body">
+                    <h3><%= link_to listing.title, listing_path(listing.id) %></h3>
+                    <p><%= listing.description %></p>
+                    <h4><%= number_to_currency(listing.price) %></h4>
+                    <%= link_to "See More", listing_path(listing.id), class:"btn btn-primary" %>
+                </div>
             </div>
         <% end %>
     </div>

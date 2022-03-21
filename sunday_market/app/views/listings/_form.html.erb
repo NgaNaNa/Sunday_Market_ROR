@@ -27,6 +27,8 @@
         <%= f.label :price %>
         <%= f.number_field :price, min: 0, max: 10000 %>
         <br>
+        <%= f.file_field :image, accept: "image/png, image/jpg, image/jpeg" %>
+        <br>
         <%= f.submit "Submit Form" %>
     </div>
 

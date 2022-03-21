@@ -1,1 +1,38 @@
 <h1> Show Listing </h1>
+
+<p>
+    <strong>Title:</strong>
+    <%= @listing.title%>
+</p>
+
+<p>
+    <strong>Description:</strong>
+    <%= @listing.description%>
+</p>
+
+<p>
+    <strong>Condition:</strong>
+    <%= @listing.condition%>
+</p>
+
+<p>
+    <strong>Category:</strong>
+    <%= @listing.category.name%>
+</p>
+
+<p>
+    <strong>Price:</strong>
+    <%= @listing.price%>
+</p>
+
+<p>
+    <strong>Owner:</strong>
+    <%= @listing.user.email%>
+</p>
+
+<p>
+    <%= image_tag @listing.image %>
+</p>
+
+<%= link_to "Edit", edit_listing_path(@listing) %>
+<%= link_to "Back", listings_path %>
