@@ -2,4 +2,7 @@
 <%# <%= form_with model: Listing.find(params[:id]) do |f| %>
 
 <%= render "form", listing: @listing, conditions: @conditions, categories: @categories %>
+<br>
+<%= link_to "DELETE", delete_listing_path(listing.id), class:"btn btn-danger" %>
+
 <%=link_to "Home", root_path%>

@@ -31,7 +31,11 @@
 </p>
 
 <p>
-    <%= image_tag @listing.image %>
+    <% if @listing.image.attached? %>
+        <%= image_tag @listing.image %>
+    <% else %>
+        <%= image_tag("listing_default.jpeg", alt: "Sunday Market Listing") %>
+    <% end %>
 </p>
 
 <%= link_to "Edit", edit_listing_path(@listing) %>

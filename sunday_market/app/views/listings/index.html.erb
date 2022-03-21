@@ -1,8 +1,9 @@
 <h1>All Listings</h1>
 
-<section>
-    <div>
-        <% @listings.each do |listing| %>
+
+<div class="row">
+    <% @listings.each do |listing| %>
+        <div class="col-md-4">
             <div class="card" style="width: 18rem;">
                 <div class="listings-image">
                     <% if listing.image.attached? %>
@@ -18,6 +19,6 @@
                     <%= link_to "See More", listing_path(listing.id), class:"btn btn-primary" %>
                 </div>
             </div>
-        <% end %>
-    </div>
-</section>
+        </div>
+    <% end %>
+</div>
