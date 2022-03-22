@@ -29,16 +29,16 @@ A registered and signed in user should be able to quickly create a listing witho
 The App has the feature that allows users to sign up and have their own account. The App then gives authorised users to perform the functions to create listings, buy listings via credit card, serach for local sellers to help buy arts locally.
 - Sitemap
 
-![Sunday Market Site Map](/assets/images/sm-site-map.png)
+    ![Sunday Market Site Map](/assets/images/sm-site-map.png)
 
 - Screenshots of the website
 
-![Create listing page](/assets/images/scr-create-listing.png)
-![Edit listing page](/assets/images/scr-edit.png)
-![Home page](/assets/images/scr-home.png)
-![View all listings page](/assets/images/scr-listings.png)
-![Sign in page](/assets/images/scr-signin.png)
-![Sign up page](/assets/images/scr-signup.png)
+    ![Create listing page](/assets/images/scr-create-listing.png)
+    ![Edit listing page](/assets/images/scr-edit.png)
+    ![Home page](/assets/images/scr-home.png)
+    ![View all listings page](/assets/images/scr-listings.png)
+    ![Sign in page](/assets/images/scr-signin.png)
+    ![Sign up page](/assets/images/scr-signup.png)
 
 - Target audience
 - Tech stack (e.g. html, css, deployment platform, etc)
