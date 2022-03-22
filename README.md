@@ -37,33 +37,33 @@ Stripe will be the payment gateway, if using credit card. This give users confid
 
 - Sitemap
 
-<p>Sunday Market Site Map</p>
+Sunday Market Site Map
 
     ![Sunday Market Site Map](sunday_market/app/assets/images/sm-site-map.png)
 
 - Screenshots of the website
 
-<p>Create listing page</p>
+Create listing page
 
     ![Create listing page](sunday_market/app/assets/images/scr-create-listing.png)
 
-<p>Edit listing page</p>
+Edit listing page
 
     ![Edit listing page](sunday_market/app/assets/images/scr-edit.png)
 
-<p>Home page</p>
+Home page
 
     ![Home page](sunday_market/app/assets/images/scr-home.png)
 
-<p>View all listings page</p>
+View all listings page
 
     ![View all listings page](sunday_market/app/assets/images/scr-listings.png)
 
-<p>Sign in page</p>
+Sign in page
 
     ![Sign in page](sunday_market/app/assets/images/scr-signin.png)
 
-<p>Sign up page</p>
+Sign up page
 
     ![Sign up page](sunday_market/app/assets/images/scr-signup.png)
 
@@ -99,29 +99,29 @@ The target audience are for anyone with a working smartphone, tablet, desktop de
 
 #### R13 Wireframes for your app
 
-<p>Create Account wireframe</p>
+Create Account wireframe
 
     ![Create Account wireframe](sunday_market/app/assets/images/scr-wf-create-account.png)
 
-<p>Home wireframe</p>
+Home wireframe
 
     ![Home wireframe](sunday_market/app/assets/images/scr-wf-home.png)
 
-<p>Listing wireframe</p>
+Listing wireframe
 
     ![Listing wireframe](sunday_market/app/assets/images/scr-wf-listing.png)
 
-<p>Profile wireframe</p>
+Profile wireframe
 
     ![Profile wireframe](sunday_market/app/assets/images/scr-wf-profile.png)
 
-<p>Create listing wireframe</p>
+Create listing wireframe
 
     ![Create listing wireframe](sunday_market/app/assets/images/src-wf-create-listing.png)
 
 #### R14 An ERD for your app
 
-<p>Sunday Market ER Diagram</p>
+Sunday Market ER Diagram
 
     ![Sunday Market ER Diagram](sunday_market/app/assets/images/sm-erd.png)
 
