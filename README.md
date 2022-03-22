@@ -23,30 +23,43 @@ https://github.com/NgaNaNa/Sunday_Market_ROR
 #### R11 Description of your marketplace app (website), including:
 
 - Purpose
+
 This two-sided marketplace web application allows signed in users to post up art pieces that they would like to sell, and also be able to purchase listings from other user.
 A registered and signed in user should be able to quickly create a listing without great difficulty, that should include basic details of the art piece, and also upload an image. They are able to accept credit card payments from the buyer (who is also a registed user like them).
+
 - Functionality / features
+
 The App has the feature that allows users to sign up and have their own account. The App then gives authorised users to perform the functions to create listings, buy listings via credit card, serach for local sellers to help buy arts locally.
+
+All account holders will have a profile page, whether they have it filled out or not, that is optional. However, as a seller, having a profile page completed gives buyer get a better feel of who they are buying their goods from.
+
+Stripe will be the payment gateway, if using credit card. This give users confidence in the application’s security management system. This feature should be optionally, allowing users to choose from a variety of payment systems, such as bank transfer, Pay ID, or cash.
+
 - Sitemap
 
-    ![Sunday Market Site Map](../assets/images/sm-site-map.png)
+    ![Sunday Market Site Map](sunday_market/app/assets/images/sm-site-map.png)
 
 - Screenshots of the website
 
-    ![Create listing page](../assets/images/scr-create-listing.png)
+    ![Create listing page](sunday_market/app/assets/images/scr-create-listing.png)
 
-    ![Edit listing page](../assets/images/scr-edit.png)
+    ![Edit listing page](sunday_market/app/assets/images/scr-edit.png)
 
-    ![Home page](../assets/images/scr-home.png)
+    ![Home page](sunday_market/app/assets/images/scr-home.png)
 
-    ![View all listings page](../assets/images/scr-listings.png)
+    ![View all listings page](sunday_market/app/assets/images/scr-listings.png)
 
-    ![Sign in page](../assets/images/scr-signin.png)
+    ![Sign in page](sunday_market/app/assets/images/scr-signin.png)
 
-    ![Sign up page](../assets/images/scr-signup.png)
+    ![Sign up page](sunday_market/app/assets/images/scr-signup.png)
 
 - Target audience
+
+The target audience are for anyone with a working smartphone, tablet, desktop devices with connection to the internet. Users don't need to have a credit card for purchasing, as they may want to contact the seller via e-mail to arrange alternative payments and exchange of the goods. As this app is also targetted towards audience with intention to purchase locally, hopefully travelling shouldn't too much of a hassle. Alternatively, the seller and buyer may arrange for items to be delivered if they are unable to get out. For example, stuck in isolation.
+
 - Tech stack (e.g. html, css, deployment platform, etc)
+
+    - 
 
 
 #### R12 User stories for your app
@@ -89,6 +102,6 @@ They are the following:
 - implement the Terms and Condition in the form for Creating New Listings.
 - Add more controls and error handling for when user enters unexpected data/or no data input received, etc.
 - implement an Admin page for user's to see a history record of their listings and how they are tracking.
-
-
-
+- implement a way of communication (ie. sending messages to the seller's e-mail address)
+- implement the payment as mentioned above, using Stripe.
+- Implement a function for users to cancel their own account.
