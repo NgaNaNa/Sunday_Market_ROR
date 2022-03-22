@@ -37,19 +37,33 @@ Stripe will be the payment gateway, if using credit card. This give users confid
 
 - Sitemap
 
+<p>Sunday Market Site Map</p>
+
     ![Sunday Market Site Map](sunday_market/app/assets/images/sm-site-map.png)
 
 - Screenshots of the website
 
+<p>Create listing page</p>
+
     ![Create listing page](sunday_market/app/assets/images/scr-create-listing.png)
+
+<p>Edit listing page</p>
 
     ![Edit listing page](sunday_market/app/assets/images/scr-edit.png)
 
+<p>Home page</p>
+
     ![Home page](sunday_market/app/assets/images/scr-home.png)
+
+<p>View all listings page</p>
 
     ![View all listings page](sunday_market/app/assets/images/scr-listings.png)
 
+<p>Sign in page</p>
+
     ![Sign in page](sunday_market/app/assets/images/scr-signin.png)
+
+<p>Sign up page</p>
 
     ![Sign up page](sunday_market/app/assets/images/scr-signup.png)
 
@@ -59,17 +73,57 @@ The target audience are for anyone with a working smartphone, tablet, desktop de
 
 - Tech stack (e.g. html, css, deployment platform, etc)
 
-    - 
-
+    - html
+    - css
+    - Heroku for deployment (Staging and Production)
+    - AWS S3 for cloud service (Storing static website resources (files) uploaded by registered users of the app)
+    - Stripe (Gateway payment system including all the good stuff I don't need to worry about, security and protection)
+    - Ruby on Rails for the framework of building the application
+    - Ruby Devise Gem to help with user authentication and validation of sessions
+    - PostgreSQL for RDBMS
+    - Bootstrap for front end styling framework
+    - Github for source control and trigger for Heroku automatic deployment
+    - geokit-rails
 
 #### R12 User stories for your app
 
+- As a user, I want to have a profile page where I can easily update myself.
+- As a user, I want to view all listings, filter listings to find neary-by listings.
+- As a user, I want to create my ownn listing and be able to manage this individually and also collectively, such as a edit function after a listing is created.
+- As a user, I want to buy other users' listings using credit card in a safe enviroment.
+- As a user, I want to be able to delete my own account.
+- As a user, I want to have confidence that only myself can make modications to my own profile page and any listing I may have.
+- As a user, I want to be able to view all listings without having to log in to do so.
+- As a user, I want to be able to contact the app owner if I have any questions or have any complaints
+- As a user, I want to be able to contact the seller of a listing and ask many questions.
 
 #### R13 Wireframes for your app
 
+<p>Create Account wireframe</p>
+
+    ![Create Account wireframe](sunday_market/app/assets/images/scr-wf-create-account.png)
+
+<p>Home wireframe</p>
+
+    ![Home wireframe](sunday_market/app/assets/images/scr-wf-home.png)
+
+<p>Listing wireframe</p>
+
+    ![Listing wireframe](sunday_market/app/assets/images/scr-wf-listing.png)
+
+<p>Profile wireframe</p>
+
+    ![Profile wireframe](sunday_market/app/assets/images/scr-wf-profile.png)
+
+<p>Create listing wireframe</p>
+
+    ![Create listing wireframe](sunday_market/app/assets/images/src-wf-create-listing.png)
 
 #### R14 An ERD for your app
 
+<p>Sunday Market ER Diagram</p>
+
+    ![Sunday Market ER Diagram](sunday_market/app/assets/images/sm-erd.png)
 
 #### R15 Explain the different high-level components (abstractions) in your app
 
@@ -105,3 +159,5 @@ They are the following:
 - implement a way of communication (ie. sending messages to the seller's e-mail address)
 - implement the payment as mentioned above, using Stripe.
 - Implement a function for users to cancel their own account.
+- Create 'About Me' page, where users may want to find out more about Sunday Market
+- Implement a way for users (registered or not) to give feedback or raise complaints about the app.
