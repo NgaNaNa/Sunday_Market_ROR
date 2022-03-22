@@ -9,6 +9,13 @@ class ListingsController < ApplicationController
     end
 
     # get /listing/1 (Showing one of the resources)
+    # def show
+    #     found_listing = listings.find do |listing|
+    #         listing[:id] == params[:id]
+    #     end
+
+    #     # add in print found_listing
+    # end
     def show
     end
 
@@ -17,20 +24,20 @@ class ListingsController < ApplicationController
         @listing = Listing.new
     end 
 
-    def create
-        @listing = Listing.create!(listing_params)
-        redirect_to listings_path
-    end
-
     # def create
-    #     @listing = current_user.listings.new(listing_params)
-    #         if @listing.save 
-    #             redirect_to @listing, notice: "Listing successfully created"
-    #         else
-    #             set_form_vars
-    #             render "new", notice: "Sorry, Something went wrong. Make sure your form is completely filled in before submitting"
-    #         end
+    #     @listing = Listing.create!(listing_params)
+    #     redirect_to listings_path
     # end
+
+    def create
+        @listing = current_user.listings.new(listing_params)
+            if @listing.save 
+                redirect_to @listing, notice: "Listing successfully created"
+            else
+                set_form_vars
+                render "new", notice: "Sorry, Something went wrong. Make sure your form is completely filled in before submitting"
+            end
+    end
     
     # get /listings/1/edit
     def edit
@@ -52,18 +59,6 @@ class ListingsController < ApplicationController
         @listing.destroy
         redirect_to listings_path, notice: "Listing successfully deleted"
     end
-
-
-    # def show
-    #     # show is for sending back only 1 resource
-    #     render plain: "This is the show method, sending back only 1 resource"
-
-    #     found_listing = listings.find do |listing|
-    #         listing[:id] == params[:id]
-    #     end
-
-    #     # add in print found_listing
-    # end
 
     private
     
