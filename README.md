@@ -127,26 +127,108 @@ The target audience are for anyone with a working smartphone, tablet, desktop de
 
 #### R15 Explain the different high-level components (abstractions) in your app
 
+Ruby on Rails take something complex, such as building an application from scratch, and allow you to implement many features in a simpler and faster way. Making use of a framework of library that is ready made. The following are some high-level abstractions used in the application.
+
+##### Active Record Associations
+
+Active Record Associations allows model tables to have defined relationships. This allows models have clear instruction on how they should behave and react with one another.
+
+An empty model would always, at least, would be a class with inheritance methods from the file ApplicationRecord. ApplicationRecord inherits from Active Record::Base. An example below is a typical empty model call Author without relationship.
+
+`class Author < ApplicationRecord
+end`
+
+The following code snippet below is an example of a model with inheritance from ApplicationRecord and relationship rules placed upon it. If a model has a relationship placed upon it, it means that the other other model must also exist. In other words, it takes two models to make a relationship work.
+
+`class Author < ApplicationRecord
+    has_many :books, dependent: :destroy
+end`
+
+`class Book < ApplicationRecord
+    belongs_to :author
+end`
+
+The Author model shown above means that it may have many books record added to the Author table, and the Book model table may only belong to one Author. For example, deleting an Author record would ultimately deletes its associated books.
+
+##### Action Controller
+
+Each model would typically require its own controller, with the same name but plural. For example, an Author model would have an Authors controller.
+Each controller is basically a class with inheritance from a file called ApplicationController. ApplicationController inherits from ActionController::Base.
+With the inheritance classes, controller can define the actions (methods) of each http request that is coming from the views, the interface where the user interacts. The actions or methods may acquire data by following the structure of the model, and instruct the view to render out the data.
+
+##### Views and partials
+
+The views would generally have simple codes to help render the pages. A lot of its functions and methods have been code up from the controller and its data looked after by the models, as mentioned above. 
+Views have special helper files called 'partials' (sometimes called 'shared'), it's often used as a template to assist pages repeat information on allocated pages, such as a navbar, or a form.
+Views also offer pages to be styled and programmed collaboratively between html and ruby, henece the file names with extension example.html.erb (erb for embedded ruby)
 
 #### R16 Detail any third party services that your app will use
 
+##### Heroku
+
+Using Heroku for web application hosting and deployment platform. Heroku is linked to the project's github repository and so therefore, any new updates pushed to the project's remote repository, Heroku picks this up and runs with the new updates from the application via Github.
+However, any new updates on the database, schema or seeds file that is ready for deployment, we must also run a migration to see the live changes.
+Heroku also needs to acknowledge the unique access keys and secret keys from AWS S3 to pass the credentials test.
+
+##### Github
+
+Using Github to manage service for git source control repositories, and also to trigger automatic deployment through Heroku.
+
+##### AWS S3
+
+Using AWS S3 for the cloud service, where files will be stored by users' uploads of static images for thier listings.
 
 #### R17 Describe your projects models in terms of the relationships (active record associations) they have with each other
 
+The User model may have none to many 'listing' and 'order' records, and this is defined in the User model class as `has_many :listings` and `has_many :orders`. This is possible because the class User is inherits from ApplicationRecord. 
+The Listing model must have one, and only one user for its record and so we define in the class Listing as `belongs_to :user`. This completes the relationship between User and Listing model.
+The Listings model will have `belongs_to :category` as it must also have a category value, but `has_one :order` only as these art pieces are sold off one at a time. Hence the reason why Order model is defined as `belongs_to :user` and `belongs_to :listing`
 
 #### R18 Discuss the database relations to be implemented in your application
 
+In SQL, relations are represented by tables, with each row in a table representing a single tuple, and the values of each attribute forms a column.
+
+Every table will have it's one and only, unique Primary key. If this table was to be recognised by another table, then it would be called a Foreign Key to that table.
+
+The starting place for the Sunday Market App relations is Listings.
+
+In the Listings table, we will have user_id being the Foreign key because the user has its own table, holding other data that is relative to its user id number. The other foreign key in the Listings table is category_id. This is because in Sunday Market a Listing can belong to one category.
+
+The Orders table has 2 foreign keys, user_id and listing_id. The user_id is from the purchaser (user_id found in User table). The listing_id is from the Listing table
 
 #### R19 Provide your database schema design
 
+<p>Sunday Market Schema</p>
+
+![Sunday Market Schema](sunday_market/app/assets/images/sm-schema.png)
 
 #### R20 Describe the way tasks are allocated and tracked in your project
 
+Using Trello board, we have 5 columns to consider; Add Tasks, In Progress, Blockers, Testing Phase & Completion.
+- Add Tasks Here
 
-#### R21 An outline of the problem you were trying to solve by building this particular marketplace app, and why it’s a problem that needs solving
+Starting from the left of the Trello board, each card added to this column acts as one story to complete. The cards are generally placed in order of priority, as well as flow of production. Often the due dates reflects the flow and order of priority.
+
+- In Progress
+
+The cards progresses and gets placed in this column, showing that is has at least been started.
+
+- Blockers
+
+Any story that has an issue and is litterally blocking the progressing of the project, is placed here. This is generally an urgent matter.
+
+- Testing / Review
+
+Any Stories that requires review or testing goes here, until things are pretty safe. This column can sometimes have the same cards moving in and out frequently.
+
+- Completion
+
+Inside each story should have mini check boxes to tick off, ensuring that once all boxes are ticked, the card is complete.
 
 
-#### R22 A walkthrough of your app
+#### Other comments
+
+Please see the presentation stored in the ppt folder.
 
 #### Backlog
 
