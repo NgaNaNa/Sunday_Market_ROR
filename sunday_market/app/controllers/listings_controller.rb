@@ -3,24 +3,22 @@ class ListingsController < ApplicationController
     skip_before_action :verify_authenticity_token
     before_action :set_conditions, only: [:new, :edit]
     before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy] #-> user has to "login" to access app
-    
+    #show all the resources
     def index
         @listings = Listing.all
     end
 
-    # get /movies/1
+    # get /listing/1 (Showing one of the resources)
     def show
     end
 
-    # get /listings/new
+    # get /listings/new (to have a form that allow you to create new resource)
     def new
         @listing = Listing.new
-        # @conditions = Listing.conditions.keys
     end 
 
     def create
         @listing = Listing.create!(listing_params)
-        # @listing.user_id = current_user.id
         redirect_to listings_path
     end
 
@@ -49,7 +47,7 @@ class ListingsController < ApplicationController
         end 
     end
 
-    # DELETE /movies/1
+    # DELETE /listing/1
     def destroy
         @listing.destroy
         redirect_to listings_path, notice: "Listing successfully deleted"
@@ -72,10 +70,6 @@ class ListingsController < ApplicationController
     def set_listing
         @listing = Listing.find(params[:id])
     end
-
-    # def read_listings
-    #     listings = Listing.all
-    # end
 
     def listing_params
         params.require(:listing).permit(:user_id, :title, :description, :price, :condition, :category_id, :sold, :image)
