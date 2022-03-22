@@ -37,35 +37,35 @@ Stripe will be the payment gateway, if using credit card. This give users confid
 
 - Sitemap
 
-Sunday Market Site Map
+<p>Sunday Market Site Map</p>
 
-    ![Sunday Market Site Map](sunday_market/app/assets/images/sm-site-map.png)
+![Sunday Market Site Map](sunday_market/app/assets/images/sm-site-map.png)
 
 - Screenshots of the website
 
-Create listing page
+<p>Create listing page</p>
 
-    ![Create listing page](sunday_market/app/assets/images/scr-create-listing.png)
+![Create listing page](sunday_market/app/assets/images/scr-create-listing.png)
 
-Edit listing page
+<p>Edit listing page</p>
 
-    ![Edit listing page](sunday_market/app/assets/images/scr-edit.png)
+![Edit listing page](sunday_market/app/assets/images/scr-edit.png)
 
-Home page
+<p>Home page</p>
 
-    ![Home page](sunday_market/app/assets/images/scr-home.png)
+![Home page](sunday_market/app/assets/images/scr-home.png)
 
-View all listings page
+<p>View all listings page</p>
 
-    ![View all listings page](sunday_market/app/assets/images/scr-listings.png)
+![View all listings page](sunday_market/app/assets/images/scr-listings.png)
 
-Sign in page
+<p>Sign in page</p>
 
-    ![Sign in page](sunday_market/app/assets/images/scr-signin.png)
+![Sign in page](sunday_market/app/assets/images/scr-signin.png)
 
-Sign up page
+<p>Sign up page</p>
 
-    ![Sign up page](sunday_market/app/assets/images/scr-signup.png)
+![Sign up page](sunday_market/app/assets/images/scr-signup.png)
 
 - Target audience
 
@@ -99,31 +99,31 @@ The target audience are for anyone with a working smartphone, tablet, desktop de
 
 #### R13 Wireframes for your app
 
-Create Account wireframe
+<p>Create Account wireframe</p>
 
-    ![Create Account wireframe](sunday_market/app/assets/images/scr-wf-create-account.png)
+![Create Account wireframe](sunday_market/app/assets/images/scr-wf-create-account.png)
 
-Home wireframe
+<p>Home wireframe</p>
 
-    ![Home wireframe](sunday_market/app/assets/images/scr-wf-home.png)
+![Home wireframe](sunday_market/app/assets/images/scr-wf-home.png)
 
-Listing wireframe
+<p>Listing wireframe</p>
 
-    ![Listing wireframe](sunday_market/app/assets/images/scr-wf-listing.png)
+![Listing wireframe](sunday_market/app/assets/images/scr-wf-listing.png)
 
-Profile wireframe
+<p>Profile wireframe</p>
 
-    ![Profile wireframe](sunday_market/app/assets/images/scr-wf-profile.png)
+![Profile wireframe](sunday_market/app/assets/images/scr-wf-profile.png)
 
-Create listing wireframe
+<p>Create listing wireframe</p>
 
-    ![Create listing wireframe](sunday_market/app/assets/images/src-wf-create-listing.png)
+![Create listing wireframe](sunday_market/app/assets/images/src-wf-create-listing.png)
 
 #### R14 An ERD for your app
 
-Sunday Market ER Diagram
+<p>Sunday Market ER Diagram</p>
 
-    ![Sunday Market ER Diagram](sunday_market/app/assets/images/sm-erd.png)
+![Sunday Market ER Diagram](sunday_market/app/assets/images/sm-erd.png)
 
 #### R15 Explain the different high-level components (abstractions) in your app
 
